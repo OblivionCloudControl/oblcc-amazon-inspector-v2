@@ -2,7 +2,7 @@
   "dependencies": [
     {
       "name": "@aws-cdk/assert",
-      "version": "^1.129.0",
+      "version": "^2.0.0",
       "type": "build"
     },
     {
@@ -22,6 +22,16 @@
     {
       "name": "@typescript-eslint/parser",
       "version": "^5",
+      "type": "build"
+    },
+    {
+      "name": "aws-cdk-lib",
+      "version": "2.1.0",
+      "type": "build"
+    },
+    {
+      "name": "constructs",
+      "version": "10.0.5",
       "type": "build"
     },
     {
@@ -93,8 +103,13 @@
       "type": "build"
     },
     {
+      "name": "aws-cdk-lib",
+      "version": "^2.1.0",
+      "type": "peer"
+    },
+    {
       "name": "constructs",
-      "version": "^3.2.27",
+      "version": "^10.0.5",
       "type": "peer"
     }
   ],
