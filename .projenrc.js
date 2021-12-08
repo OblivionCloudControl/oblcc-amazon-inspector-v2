@@ -40,5 +40,6 @@ const project = new awscdk.AwsCdkConstructLibrary({
   scripts: {
     synth: 'npx cdk synth --app=./lib/integ.default.js',
   },
+  minNodeVersion: '14.17.0',
 });
 project.synth();
