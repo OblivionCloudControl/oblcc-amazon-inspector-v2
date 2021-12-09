@@ -4,8 +4,6 @@
 
 ### Inspector2 <a name="oblcc-amazon-inspector-v2.Inspector2" id="oblccamazoninspectorv2inspector2"></a>
 
-Simple construct to enable Amazon Inspector 2.
-
 #### Initializers <a name="oblcc-amazon-inspector-v2.Inspector2.Initializer" id="oblccamazoninspectorv2inspector2initializer"></a>
 
 ```typescript
@@ -46,7 +44,7 @@ new Inspector2(scope: Construct, id: string, props?: Inspector2Props)
 
 | **Name** | **Type** | **Description** |
 | --- | --- | --- |
-| [`props`](#oblccamazoninspectorv2inspector2propertyprops)<span title="Required">*</span> | [`oblcc-amazon-inspector-v2.Inspector2Props`](#oblcc-amazon-inspector-v2.Inspector2Props) | *No description.* |
+| [`props`](#oblccamazoninspectorv2inspector2propertyprops)<span title="Required">*</span> | [`oblcc-amazon-inspector-v2.Inspector2Props`](#oblcc-amazon-inspector-v2.Inspector2Props) | Simple construct to enable Amazon Inspector 2. |
 
 ---
 
@@ -57,6 +55,8 @@ public readonly props: Inspector2Props;
 ```
 
 - *Type:* [`oblcc-amazon-inspector-v2.Inspector2Props`](#oblcc-amazon-inspector-v2.Inspector2Props)
+
+Simple construct to enable Amazon Inspector 2.
 
 ---
 
