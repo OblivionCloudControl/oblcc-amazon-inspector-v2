@@ -19,10 +19,18 @@ export interface Inspector2Props extends StackProps {
  * Simple construct to enable Amazon Inspector 2
  */
 export class Inspector2 extends Resource {
+  props: Inspector2Props;
+
   constructor(scope: Construct, id: string, props?: Inspector2Props) {
     super(scope, id);
 
-    const resource_types = props?.resourceTypes ?? ['ECR', 'EC2'];
+    this.props = props ?? {};
+
+    this.enableLocalAccount();
+  }
+
+  enableLocalAccount() {
+    const resource_types = this.props.resourceTypes ?? ['ECR', 'EC2'];
 
     const createOrUpdateEnableInspector2 = {
       service: 'Inspector2',
@@ -62,6 +70,5 @@ export class Inspector2 extends Resource {
       onDelete: deleteEnableInspector2,
       logRetention: logs.RetentionDays.ONE_MONTH,
     });
-
   }
 }
