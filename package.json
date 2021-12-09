@@ -1,5 +1,6 @@
 {
   "name": "oblcc-amazon-inspector-v2",
+  "description": "This construct can be used to automate provisioning of Amazon Inspector 2",
   "repository": {
     "type": "git",
     "url": "https://github.com/steyn/oblcc-amazon-inspector-v2.git"

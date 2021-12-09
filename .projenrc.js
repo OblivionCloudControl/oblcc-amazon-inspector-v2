@@ -12,6 +12,7 @@ const project = new awscdk.AwsCdkConstructLibrary({
   // cdkTestDependencies: undefined,  /* AWS CDK modules required for testing. */
   // deps: [],                        /* Runtime dependencies of this module. */
   // description: undefined,          /* The description is just a string that helps people understand the purpose of the package. */
+  description: 'This construct can be used to automate provisioning of Amazon Inspector 2',
   // devDeps: [],                     /* Build dependencies for this module. */
   deps: [
     // '@aws-cdk/assert@' + cdkVersion,
