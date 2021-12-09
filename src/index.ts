@@ -49,8 +49,7 @@ export class Inspector2 extends Resource {
         iam.ManagedPolicy.fromAwsManagedPolicyName('service-role/AWSLambdaBasicExecutionRole'),
         iam.ManagedPolicy.fromAwsManagedPolicyName('AmazonInspector2FullAccess'),
       ],
-    },
-    );
+    });
 
     new custom_resources.AwsCustomResource(this, 'enable_inspector2', {
       installLatestAwsSdk: true,
