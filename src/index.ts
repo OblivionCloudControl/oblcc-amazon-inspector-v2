@@ -1,12 +1,12 @@
 import {
-  StackProps, Resource,
+  Resource, ResourceProps,
   aws_iam as iam,
   custom_resources as custom_resources,
   aws_logs as logs,
 } from 'aws-cdk-lib';
 import { Construct } from 'constructs';
 
-export interface Inspector2Props extends StackProps {
+export interface Inspector2Props extends ResourceProps {
   /**
    * Select resource types to enable Amazon Inspector 2 scans for
    *
@@ -15,10 +15,10 @@ export interface Inspector2Props extends StackProps {
   readonly resourceTypes?: string[];
 }
 
-/**
- * Simple construct to enable Amazon Inspector 2
- */
 export class Inspector2 extends Resource {
+  /**
+   * Simple construct to enable Amazon Inspector 2
+   */
   props: Inspector2Props;
 
   constructor(scope: Construct, id: string, props?: Inspector2Props) {
@@ -29,7 +29,10 @@ export class Inspector2 extends Resource {
     this.enableLocalAccount();
   }
 
-  enableLocalAccount() {
+  /**
+   * Enable Amazon Inspector 2 in local AWS account
+   */
+  private enableLocalAccount() {
     const resource_types = this.props.resourceTypes ?? ['ECR', 'EC2'];
 
     const createOrUpdateEnableInspector2 = {

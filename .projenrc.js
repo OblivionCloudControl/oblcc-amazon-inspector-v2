@@ -30,6 +30,7 @@ const project = new awscdk.AwsCdkConstructLibrary({
     'inspector',
     'inspector2',
   ],
+  dependabot: false,
   python: {
     distName: 'oblcc-amazon-inspector-v2',
     module: 'oblcc-amazon-inspector-v2',

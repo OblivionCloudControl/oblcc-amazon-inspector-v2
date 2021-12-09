@@ -42,6 +42,23 @@ new Inspector2(scope: Construct, id: string, props?: Inspector2Props)
 
 
 
+#### Properties <a name="Properties" id="properties"></a>
+
+| **Name** | **Type** | **Description** |
+| --- | --- | --- |
+| [`props`](#oblccamazoninspectorv2inspector2propertyprops)<span title="Required">*</span> | [`oblcc-amazon-inspector-v2.Inspector2Props`](#oblcc-amazon-inspector-v2.Inspector2Props) | *No description.* |
+
+---
+
+##### `props`<sup>Required</sup> <a name="oblcc-amazon-inspector-v2.Inspector2.property.props" id="oblccamazoninspectorv2inspector2propertyprops"></a>
+
+```typescript
+public readonly props: Inspector2Props;
+```
+
+- *Type:* [`oblcc-amazon-inspector-v2.Inspector2Props`](#oblcc-amazon-inspector-v2.Inspector2Props)
+
+---
 
 
 ## Structs <a name="Structs" id="structs"></a>
@@ -60,107 +77,67 @@ const inspector2Props: Inspector2Props = { ... }
 
 | **Name** | **Type** | **Description** |
 | --- | --- | --- |
-| [`analyticsReporting`](#oblccamazoninspectorv2inspector2propspropertyanalyticsreporting) | `boolean` | Include runtime versioning information in this Stack. |
-| [`description`](#oblccamazoninspectorv2inspector2propspropertydescription) | `string` | A description of the stack. |
-| [`env`](#oblccamazoninspectorv2inspector2propspropertyenv) | [`aws-cdk-lib.Environment`](#aws-cdk-lib.Environment) | The AWS environment (account/region) where this stack will be deployed. |
-| [`stackName`](#oblccamazoninspectorv2inspector2propspropertystackname) | `string` | Name to deploy the stack with. |
-| [`synthesizer`](#oblccamazoninspectorv2inspector2propspropertysynthesizer) | [`aws-cdk-lib.IStackSynthesizer`](#aws-cdk-lib.IStackSynthesizer) | Synthesis method to use while deploying this stack. |
-| [`tags`](#oblccamazoninspectorv2inspector2propspropertytags) | {[ key: string ]: `string`} | Stack tags that will be applied to all the taggable resources and the stack itself. |
-| [`terminationProtection`](#oblccamazoninspectorv2inspector2propspropertyterminationprotection) | `boolean` | Whether to enable termination protection for this stack. |
+| [`account`](#oblccamazoninspectorv2inspector2propspropertyaccount) | `string` | The AWS account ID this resource belongs to. |
+| [`environmentFromArn`](#oblccamazoninspectorv2inspector2propspropertyenvironmentfromarn) | `string` | ARN to deduce region and account from. |
+| [`physicalName`](#oblccamazoninspectorv2inspector2propspropertyphysicalname) | `string` | The value passed in by users to the physical name prop of the resource. |
+| [`region`](#oblccamazoninspectorv2inspector2propspropertyregion) | `string` | The AWS region this resource belongs to. |
 | [`resourceTypes`](#oblccamazoninspectorv2inspector2propspropertyresourcetypes) | `string`[] | Select resource types to enable Amazon Inspector 2 scans for. |
 
 ---
 
-##### `analyticsReporting`<sup>Optional</sup> <a name="oblcc-amazon-inspector-v2.Inspector2Props.property.analyticsReporting" id="oblccamazoninspectorv2inspector2propspropertyanalyticsreporting"></a>
+##### `account`<sup>Optional</sup> <a name="oblcc-amazon-inspector-v2.Inspector2Props.property.account" id="oblccamazoninspectorv2inspector2propspropertyaccount"></a>
 
 ```typescript
-public readonly analyticsReporting: boolean;
-```
-
-- *Type:* `boolean`
-- *Default:* `analyticsReporting` setting of containing `App`, or value of 'aws:cdk:version-reporting' context key
-
-Include runtime versioning information in this Stack.
-
----
-
-##### `description`<sup>Optional</sup> <a name="oblcc-amazon-inspector-v2.Inspector2Props.property.description" id="oblccamazoninspectorv2inspector2propspropertydescription"></a>
-
-```typescript
-public readonly description: string;
+public readonly account: string;
 ```
 
 - *Type:* `string`
-- *Default:* No description.
+- *Default:* the resource is in the same account as the stack it belongs to
 
-A description of the stack.
-
----
-
-##### `env`<sup>Optional</sup> <a name="oblcc-amazon-inspector-v2.Inspector2Props.property.env" id="oblccamazoninspectorv2inspector2propspropertyenv"></a>
-
-```typescript
-public readonly env: Environment;
-```
-
-- *Type:* [`aws-cdk-lib.Environment`](#aws-cdk-lib.Environment)
-- *Default:* The environment of the containing `Stage` if available, otherwise create the stack will be environment-agnostic.
-
-The AWS environment (account/region) where this stack will be deployed.
-
-Set the `region`/`account` fields of `env` to either a concrete value to select the indicated environment (recommended for production stacks), or to the values of environment variables `CDK_DEFAULT_REGION`/`CDK_DEFAULT_ACCOUNT` to let the target environment depend on the AWS credentials/configuration that the CDK CLI is executed under (recommended for development stacks).  If the `Stack` is instantiated inside a `Stage`, any undefined `region`/`account` fields from `env` will default to the same field on the encompassing `Stage`, if configured there.  If either `region` or `account` are not set nor inherited from `Stage`, the Stack will be considered "*environment-agnostic*"". Environment-agnostic stacks can be deployed to any environment but may not be able to take advantage of all features of the CDK. For example, they will not be able to use environmental context lookups such as `ec2.Vpc.fromLookup` and will not automatically translate Service Principals to the right format based on the environment's AWS partition, and other such enhancements.
+The AWS account ID this resource belongs to.
 
 ---
 
-##### `stackName`<sup>Optional</sup> <a name="oblcc-amazon-inspector-v2.Inspector2Props.property.stackName" id="oblccamazoninspectorv2inspector2propspropertystackname"></a>
+##### `environmentFromArn`<sup>Optional</sup> <a name="oblcc-amazon-inspector-v2.Inspector2Props.property.environmentFromArn" id="oblccamazoninspectorv2inspector2propspropertyenvironmentfromarn"></a>
 
 ```typescript
-public readonly stackName: string;
+public readonly environmentFromArn: string;
 ```
 
 - *Type:* `string`
-- *Default:* Derived from construct path.
+- *Default:* take environment from `account`, `region` parameters, or use Stack environment.
 
-Name to deploy the stack with.
+ARN to deduce region and account from.
 
----
-
-##### `synthesizer`<sup>Optional</sup> <a name="oblcc-amazon-inspector-v2.Inspector2Props.property.synthesizer" id="oblccamazoninspectorv2inspector2propspropertysynthesizer"></a>
-
-```typescript
-public readonly synthesizer: IStackSynthesizer;
-```
-
-- *Type:* [`aws-cdk-lib.IStackSynthesizer`](#aws-cdk-lib.IStackSynthesizer)
-- *Default:* `DefaultStackSynthesizer` if the `@aws-cdk/core:newStyleStackSynthesis` feature flag is set, `LegacyStackSynthesizer` otherwise.
-
-Synthesis method to use while deploying this stack.
+The ARN is parsed and the account and region are taken from the ARN. This should be used for imported resources.  Cannot be supplied together with either `account` or `region`.
 
 ---
 
-##### `tags`<sup>Optional</sup> <a name="oblcc-amazon-inspector-v2.Inspector2Props.property.tags" id="oblccamazoninspectorv2inspector2propspropertytags"></a>
+##### `physicalName`<sup>Optional</sup> <a name="oblcc-amazon-inspector-v2.Inspector2Props.property.physicalName" id="oblccamazoninspectorv2inspector2propspropertyphysicalname"></a>
 
 ```typescript
-public readonly tags: {[ key: string ]: string};
+public readonly physicalName: string;
 ```
 
-- *Type:* {[ key: string ]: `string`}
-- *Default:* {}
+- *Type:* `string`
+- *Default:* The physical name will be allocated by CloudFormation at deployment time
 
-Stack tags that will be applied to all the taggable resources and the stack itself.
+The value passed in by users to the physical name prop of the resource.
+
+`undefined` implies that a physical name will be allocated by    CloudFormation during deployment. - a concrete value implies a specific physical name - `PhysicalName.GENERATE_IF_NEEDED` is a marker that indicates that a physical will only be generated    by the CDK if it is needed for cross-environment references. Otherwise, it will be allocated by CloudFormation.
 
 ---
 
-##### `terminationProtection`<sup>Optional</sup> <a name="oblcc-amazon-inspector-v2.Inspector2Props.property.terminationProtection" id="oblccamazoninspectorv2inspector2propspropertyterminationprotection"></a>
+##### `region`<sup>Optional</sup> <a name="oblcc-amazon-inspector-v2.Inspector2Props.property.region" id="oblccamazoninspectorv2inspector2propspropertyregion"></a>
 
 ```typescript
-public readonly terminationProtection: boolean;
+public readonly region: string;
 ```
 
-- *Type:* `boolean`
-- *Default:* false
+- *Type:* `string`
+- *Default:* the resource is in the same region as the stack it belongs to
 
-Whether to enable termination protection for this stack.
+The AWS region this resource belongs to.
 
 ---
 
