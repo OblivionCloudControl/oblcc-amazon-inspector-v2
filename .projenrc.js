@@ -1,5 +1,5 @@
 const { awscdk } = require('projen');
-const cdkVersion = '2.1.0';
+const cdkVersion = '2.21.1';
 const project = new awscdk.AwsCdkConstructLibrary({
   author: 'Steyn Huizinga',
   authorAddress: 'steyn.huizinga@oblcc.com',
@@ -8,6 +8,7 @@ const project = new awscdk.AwsCdkConstructLibrary({
   jsiiFqn: 'projen.AwsCdkConstructLibrary',
   name: 'oblcc-amazon-inspector-v2',
   repositoryUrl: 'https://github.com/steyn/oblcc-amazon-inspector-v2.git',
+  github: false,
   // cdkDependencies: undefined,      /* Which AWS CDK modules (those that start with "@aws-cdk/") does this library require when consumed? */
   // cdkTestDependencies: undefined,  /* AWS CDK modules required for testing. */
   // deps: [],                        /* Runtime dependencies of this module. */
