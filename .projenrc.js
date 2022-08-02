@@ -1,9 +1,10 @@
 const { awscdk } = require('projen');
-const cdkVersion = '2.29.1';
+const cdkVersion = '2.34.2';
 const project = new awscdk.AwsCdkConstructLibrary({
   author: 'Steyn Huizinga',
   authorAddress: 'steyn.huizinga@oblcc.com',
   cdkVersion: cdkVersion,
+  cdkVersionPinning: true,
   defaultReleaseBranch: 'main',
   jsiiFqn: 'projen.AwsCdkConstructLibrary',
   name: 'oblcc-amazon-inspector-v2',
@@ -15,13 +16,6 @@ const project = new awscdk.AwsCdkConstructLibrary({
   // description: undefined,          /* The description is just a string that helps people understand the purpose of the package. */
   description: 'This construct can be used to automate provisioning of Amazon Inspector 2',
   // devDeps: [],                     /* Build dependencies for this module. */
-  deps: [
-    // '@aws-cdk/assert@' + cdkVersion,
-  ],
-  devDeps: [
-    'aws-cdk-lib@' + cdkVersion,
-    '@aws-cdk/assert@^2.0.0',
-  ],
   // packageName: undefined,          /* The "name" in package.json. */
   // release: undefined,              /* Add release management to this project. */
   keywords: [
@@ -43,6 +37,5 @@ const project = new awscdk.AwsCdkConstructLibrary({
   scripts: {
     synth: 'npx cdk synth --app=./lib/integ.default.js',
   },
-  minNodeVersion: '14.17.0',
 });
 project.synth();
